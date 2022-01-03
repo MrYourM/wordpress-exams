@@ -1,0 +1,20 @@
+version: "3.4"
+services:
+  wordpress:
+    image: wordpress:v1
+    container_name: wordpress
+    hostname: wordpress
+    command: tail -f /dev/null
+    networks:
+      wordpress_net:
+    volumes:
+      - ${PWD}/wordpress:/var/www/html/wordpress
+    ports:
+      - "180:80"
+
+networks:
+  wordpress_net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.16.0.0/24
