@@ -4,13 +4,20 @@ services:
     image: wordpress:v1
     container_name: wordpress
     hostname: wordpress
-    command: tail -f /dev/null
     networks:
       wordpress_net:
     volumes:
       - ${PWD}/wordpress:/var/www/html/wordpress
     ports:
       - "180:80"
+  mysql:
+    image: mysql:latest
+    container_name: mysql
+    hostname: mysql
+    networks:
+      wordpress_net:
+    environment:
+      - MYSQL_ROOT_PASSWORD=12345
 
 networks:
   wordpress_net:
