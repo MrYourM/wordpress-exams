@@ -9,9 +9,9 @@ services:
     volumes:
       - ${PWD}/wordpress:/var/www/html/wordpress
     ports:
-      - "180:80"
+      - "80:80"
   mysql:
-    image: mysql:latest
+    image: mysql:7.5
     container_name: mysql
     hostname: mysql
     networks:
