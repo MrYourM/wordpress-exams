@@ -12,6 +12,8 @@ services:
     image: mysql:5.7
     container_name: mysql
     hostname: mysql
+    volumes:
+      - ${PWD}/data:/var/lib/mysql
     networks:
       wordpress_net:
     environment:
