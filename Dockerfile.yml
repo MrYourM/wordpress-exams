@@ -7,6 +7,7 @@ RUN apt update -y && apt install gpg -y && \
     apt-get install -y tzdata && dpkg-reconfigure --frontend noninteractive tzdata && \
     apt -y install php7.4 php7.4-mysql nginx php7.4-fpm php7.4-xml nginx monit
 
+RUN rm -rf /var/www/html/*
 ADD ./config/ /
 RUN chmod +x /usr/sbin/run_monit.sh
 ENTRYPOINT [ "/usr/sbin/run_monit.sh" ]

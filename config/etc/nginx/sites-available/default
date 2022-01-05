@@ -2,7 +2,7 @@ server {
         ## Your website name goes here.
         server_name _;
         ## Your only path reference.
-        root /var/www/html/wordpress;
+        root /var/www/html;
         ## This should be in your http block and if it is, it's not needed here.
         index index.php;
 
@@ -27,7 +27,7 @@ server {
             #if (!-f $document_root$fastcgi_script_name) {
         #       return 404;
          #   }
-            root /var/www/html/wordpress;
+            root /var/www/html;
 
             # Mitigate https://httpoxy.org/ vulnerabilities
             # fastcgi_param HTTP_PROXY "";

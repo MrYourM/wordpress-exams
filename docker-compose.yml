@@ -6,8 +6,6 @@ services:
     hostname: wordpress
     networks:
       wordpress_net:
-    volumes:
-      - ${PWD}/wordpress:/var/www/html/wordpress
     ports:
       - "80:80"
   mysql:
